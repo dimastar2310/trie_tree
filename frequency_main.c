@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
     root=NewNode(root);
     if(argc == 2 && *(argv[1]) == 'r'){
          while((k=getchar())!=EOF){
-             printf("curr k is %c\n",k);
+            
          if(k>='a'&&k<='z'){
              p[i]=k;
              i++;
