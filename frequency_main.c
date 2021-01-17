@@ -11,34 +11,53 @@
 int main(int argc, char* argv[])
 {
     char p[256];
+    //char z[256];
+    //char* pp = 0;
     char k;
+    //pp = z;
     int i=0;
+    int h =0;
+    int word = 0;
+    //int word =0; //ani roze lispor et hamila hahrona
     node* root = NULL;
     root=NewNode(root);
     if(argc == 2 && *(argv[1]) == 'r'){
-         while((k=getchar())!=EOF){
-            
+         while(scanf("%c",&k)!=EOF){
+            // printf("curr k is %c\n",k);
          if(k>='a'&&k<='z'){
+             if(h==1){
+                // printf("the h is %d\n",h);
+              word++;
+              h=0;
+             }
+             
              p[i]=k;
              i++;
          } 
          else if(k>='A' && k<='Z'){
+            // printf("the h is %d\n",h);
+            
+            
              k = k+32;
              p[i] = k;
              i++;
          }
-         else if(k==' '||k==',' || k=='.')&& strlen(p)!=0){
-         
+         else if((k==' '||k==',' || k=='.')&& strlen(p)!=0){ //kol od le yardnu shura
+          h=1;
+          //printf("the h is %d\n",h);
 
          
     root=doTree(root,p);    
     i=0; //neathel caunter mehadash
+    //puts(p);
     memset(p,0,strlen(p));//meathelet mehadash et p
          }
-         }
     }
     }
-     print_r(root,p,0);
+    //printf("the str is %s\n",p); //sholhim pointer she mazbia al klum pointer ezer she ishamesh ke maarah
+    print_r(root,p,0);
+    //p meupas po
+    // display2(root,p,0,word);
     //dofree(root);
         
      if (argc == 1){
@@ -52,34 +71,25 @@ int main(int argc, char* argv[])
              p[i] = k;
              i++;
          }
-     else if(k==' '||k==',' || k=='.')&& strlen(p)!=0){
-         
-
-         
+          else if((k==' '||k==',' || k=='.')&& strlen(p)!=0){
     root=doTree(root,p);    
-    i=0; //neathel caunter mehadash
-    memset(p,0,strlen(p));//meathelet mehadash et p
+    i=0;
+    memset(p,0,strlen(p));
          }
+         
     }
      display(root,p,0);
+     
 }
 
-    
-    //dofree(root);
-     
-    //display(root,str,level);
-
-    else
-    { 
-        printf("Something went wrong with the arguments\n");
-    }
+ 
     dofree(root);
+
+  
     return 0;
 }
 
  
-    
-
     
 
 
