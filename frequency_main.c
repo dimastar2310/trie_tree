@@ -27,13 +27,14 @@ int main(int argc, char* argv[])
              p[i] = k;
              i++;
          }
-         else { //kol od le yardnu shura
+         else if(k==' '||k==',' || k=='.')&& strlen(p)!=0){
          
 
          
     root=doTree(root,p);    
     i=0; //neathel caunter mehadash
     memset(p,0,strlen(p));//meathelet mehadash et p
+         }
          }
     }
     }
@@ -51,10 +52,13 @@ int main(int argc, char* argv[])
              p[i] = k;
              i++;
          }
-         else {
+     else if(k==' '||k==',' || k=='.')&& strlen(p)!=0){
+         
+
+         
     root=doTree(root,p);    
-    i=0;
-    memset(p,0,strlen(p));
+    i=0; //neathel caunter mehadash
+    memset(p,0,strlen(p));//meathelet mehadash et p
          }
     }
      display(root,p,0);
