@@ -49,7 +49,7 @@ return root;
 void print_r(node* root,char str[],int index){
     if(root->p==true){
         str[index]='\0';
-        printf("%s\t %ld\n",str,root->count);
+        printf("%s %ld\n",str,root->count);
     }
     for(int i=NUM_LETTERS-1; i>=0;i--){
         if(root->children[i]!=NULL)
@@ -74,7 +74,7 @@ void display(node* root,char str[],int level)
     {
         str[level]='\0';
         print(str);
-        printf("\t %ld\n",root->count);
+        printf(" %ld\n",root->count);
     }
     int i;
     for(i=0;i<NUM_LETTERS;i++)
