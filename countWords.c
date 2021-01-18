@@ -41,7 +41,7 @@ temp->count++;
 node* doTree(node* root,char arr[]){
 
 
-//int size=strlen(arr);
+
 insert(root,arr);
 return root;
 }
@@ -63,11 +63,15 @@ void print_r(node* root,char str[],int index){
 void print( char arr[])
 {
     
-    for(int i=0;i<strlen(arr); i++){
+    for(int i=0;i<strlen(arr) && arr[i]!=' '; i++){
     printf("%c",arr[i]);
     
     }
 }
+
+        
+    
+
 void display(node* root,char str[],int level)
 {
     if(root->p==true)
@@ -95,3 +99,4 @@ void dofree(node* temp){
     }
     free(temp);
 }
+
