@@ -16,23 +16,19 @@ int main(int argc, char* argv[])
     
     int i=0;
     
+   
     node* root = NULL;
     root=NewNode(root);
     if(argc == 2 && *(argv[1]) == 'r'){
          while(scanf("%c",&k)!=EOF){
             
          if(k>='a'&&k<='z'){
-             if(h==1){
-              
-              word++;
-              h=0;
-             }
              
              p[i]=k;
              i++;
          } 
          else if(k>='A' && k<='Z'){
-           
+            
             
             
              k = k+32;
@@ -40,7 +36,6 @@ int main(int argc, char* argv[])
              i++;
          }
          else if((k==' '||k==',' || k=='.')&& strlen(p)!=0){ //kol od le yardnu shura
-          h=1;
         
 
          
@@ -55,7 +50,6 @@ int main(int argc, char* argv[])
     print_r(root,p,0);
     //p meupas po
    
-        
      if (argc == 1){
     while((k=getchar())!=EOF){
          if(k>='a'&&k<='z'){
@@ -86,6 +80,16 @@ int main(int argc, char* argv[])
 }
 
  
+    
+
+    
+
+
+    
+
+
+
+
     
 
 
